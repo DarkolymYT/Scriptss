@@ -1,0 +1,414 @@
+local WZ2 = Instance.new("ScreenGui")
+local TopFrame = Instance.new("Frame")
+local Main = Instance.new("ImageLabel")
+local minimize = Instance.new("ImageButton")
+local bruh = Instance.new("ImageButton")
+local close = Instance.new("ImageButton")
+local BeautyB = Instance.new("Frame")
+local TBox = Instance.new("TextBox")
+local beauty = Instance.new("Frame")
+local KillP = Instance.new("TextButton")
+local KillPla = Instance.new("TextButton")
+local KillAll = Instance.new("TextButton")
+local BeautyA = Instance.new("Frame")
+local Misc = Instance.new("TextLabel")
+local CCds = Instance.new("ImageButton")
+local Apotion = Instance.new("TextButton")
+local ADropper = Instance.new("TextButton")
+local title = Instance.new("TextLabel")
+local CS = Instance.new("ImageLabel")
+local beauty_2 = Instance.new("Frame")
+local Credits = Instance.new("TextLabel")
+local close1 = Instance.new("ImageButton")
+local cds = Instance.new("TextLabel")
+local FlopFrame = Instance.new("Frame")
+local TeamChanger = Instance.new("ImageLabel")
+local Blue = Instance.new("TextButton")
+local Green = Instance.new("TextButton")
+local Red = Instance.new("TextButton")
+local Yellow = Instance.new("TextButton")
+ 
+WZ2.Name = "WZ2"
+WZ2.Parent = game.CoreGui
+WZ2.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+WZ2.ResetOnSpawn = false
+
+TopFrame.Name = "TopFrame"
+TopFrame.Parent = WZ2
+TopFrame.BackgroundColor3 = Color3.new(1, 1, 1)
+TopFrame.BackgroundTransparency = 1
+TopFrame.BorderSizePixel = 0
+TopFrame.Position = UDim2.new(0.10798122, 0, 0.329238325, 0)
+TopFrame.Size = UDim2.new(0, 453, 0, 21)
+TopFrame.Draggable = true
+TopFrame.Active = true
+
+Main.Name = "Main"
+Main.Parent = TopFrame
+Main.Active = true
+Main.BackgroundColor3 = Color3.new(1, 1, 1)
+Main.BackgroundTransparency = 1
+Main.BorderSizePixel = 0
+Main.Position = UDim2.new(-0.000633256568, 0, -0.0327363871, 0)
+Main.Selectable = true
+Main.Size = UDim2.new(0, 454, 0, 217)
+Main.Image = "http://www.roblox.com/asset/?id=4504926086"
+Main.ImageColor3 = Color3.new(0.568627, 0.054902, 0.603922)
+
+minimize.Name = "minimize"
+minimize.Parent = Main
+minimize.BackgroundTransparency = 1
+minimize.Position = UDim2.new(0.902912617, 0, 0, 0)
+minimize.Size = UDim2.new(0, 25, 0, 25)
+minimize.ZIndex = 2
+minimize.Image = "rbxassetid://3926307971"
+minimize.ImageRectOffset = Vector2.new(884, 284)
+minimize.ImageRectSize = Vector2.new(36, 36)
+
+bruh.Name = "bruh"
+bruh.Parent = Main
+bruh.BackgroundTransparency = 1
+bruh.Position = UDim2.new(0.0217841398, 0, 0.623477936, 0)
+bruh.Size = UDim2.new(0, 29, 0, 28)
+bruh.ZIndex = 2
+bruh.Image = "rbxassetid://3926307971"
+bruh.ImageRectOffset = Vector2.new(244, 4)
+bruh.ImageRectSize = Vector2.new(36, 36)
+
+close.Name = "close"
+close.Parent = Main
+close.BackgroundTransparency = 1
+close.Position = UDim2.new(0.951456308, 0, 0, 0)
+close.Size = UDim2.new(0, 25, 0, 25)
+close.ZIndex = 2
+close.Image = "rbxassetid://3926305904"
+close.ImageRectOffset = Vector2.new(284, 4)
+close.ImageRectSize = Vector2.new(24, 24)
+close.MouseButton1Click:Connect(function()
+game:GetService("CoreGui").WZ2:Destroy()
+end)
+
+BeautyB.Name = "BeautyB"
+BeautyB.Parent = Main
+BeautyB.BackgroundColor3 = Color3.new(1, 1, 1)
+BeautyB.BorderSizePixel = 0
+BeautyB.Position = UDim2.new(0.0881057233, 0, 0.770745337, 0)
+BeautyB.Size = UDim2.new(0, 186, 0, 1)
+
+TBox.Name = "TBox"
+TBox.Parent = Main
+TBox.BackgroundColor3 = Color3.new(1, 1, 1)
+TBox.BorderSizePixel = 0
+TBox.Position = UDim2.new(0.0877973586, 0, 0.637302816, 0)
+TBox.Size = UDim2.new(0, 186, 0, 24)
+TBox.Font = Enum.Font.Fantasy
+TBox.Text = ""
+TBox.TextColor3 = Color3.new(0, 0, 0)
+TBox.TextSize = 14
+
+beauty.Name = "beauty"
+beauty.Parent = Main
+beauty.BackgroundColor3 = Color3.new(1, 1, 1)
+beauty.BorderSizePixel = 0
+beauty.Position = UDim2.new(0, 0, 0.103611499, 0)
+beauty.Size = UDim2.new(0, 454, 0, 2)
+
+KillP.Name = "KillP"
+KillP.Parent = Main
+KillP.BackgroundColor3 = Color3.new(1, 1, 1)
+KillP.BorderSizePixel = 0
+KillP.Position = UDim2.new(0.0881057233, 0, 0.774193525, 0)
+KillP.Size = UDim2.new(0, 93, 0, 20)
+KillP.Font = Enum.Font.Fantasy
+KillP.Text = "Kill"
+KillP.TextColor3 = Color3.new(0, 0, 0)
+KillP.TextSize = 18
+KillP.MouseButton1Click:Connect(function()
+    local tbl_main = 
+    {
+          game:GetService("Players")[TBox.Text].Character.HumanoidRootPart.CFrame,
+          100, 
+          1.5, 
+          game:GetService("Workspace").TeamSilencium.Wand, 
+          15000000, 
+          game:GetService("Workspace").TeamSilencium
+    }
+    game:GetService("Workspace").TeamSilencium.Wand.Fire:FireServer(unpack(tbl_main))
+end)
+
+KillPla.Name = "KillPla"
+KillPla.Parent = Main
+KillPla.BackgroundColor3 = Color3.new(1, 1, 1)
+KillPla.BorderSizePixel = 0
+KillPla.Position = UDim2.new(0.292951524, 0, 0.774193525, 0)
+KillPla.Size = UDim2.new(0, 93, 0, 20)
+KillPla.Font = Enum.Font.Fantasy
+KillPla.Text = "Kill Loop"
+KillPla.TextColor3 = Color3.new(0, 0, 0)
+KillPla.TextSize = 18
+KillPla.MouseButton1Click:Connect(function()
+_G.KP = true
+while _G.KP do wait()
+    local tbl_main = 
+    {
+          game:GetService("Players")[TBox.Text].Character.HumanoidRootPart.CFrame,
+          100, 
+          1.5, 
+          game:GetService("Workspace").TeamSilencium.Wand, 
+          15000000, 
+          game:GetService("Workspace").TeamSilencium
+    }
+    game:GetService("Workspace").TeamSilencium.Wand.Fire:FireServer(unpack(tbl_main))
+end
+end)
+
+KillAll.Name = "KillAll"
+KillAll.Parent = Main
+KillAll.BackgroundColor3 = Color3.new(1, 1, 1)
+KillAll.BorderSizePixel = 0
+KillAll.Position = UDim2.new(0.0881057233, 0, 0.866359472, 0)
+KillAll.Size = UDim2.new(0, 186, 0, 20)
+KillAll.Font = Enum.Font.Fantasy
+KillAll.Text = "Kill All"
+KillAll.TextColor3 = Color3.new(0, 0, 0)
+KillAll.TextSize = 18
+KillAll.MouseButton1Click:Connect(function()
+for i,v in pairs(game.Players:GetChildren()) do
+    local tbl_main = 
+    {
+          v.Character.HumanoidRootPart.CFrame,
+          100, 
+          1.5, 
+          game:GetService("Workspace").TeamSilencium.Wand, 
+          15000000, 
+          game:GetService("Workspace").TeamSilencium
+    }
+    game:GetService("Workspace").TeamSilencium.Wand.Fire:FireServer(unpack(tbl_main))
+    end
+end)
+
+BeautyA.Name = "BeautyA"
+BeautyA.Parent = Main
+BeautyA.BackgroundColor3 = Color3.new(1, 1, 1)
+BeautyA.BorderSizePixel = 0
+BeautyA.Position = UDim2.new(0.546255529, 0, 0.369823694, 0)
+BeautyA.Size = UDim2.new(0, 186, 0, 1)
+
+Misc.Name = "Misc"
+Misc.Parent = Main
+Misc.BackgroundColor3 = Color3.new(1, 1, 1)
+Misc.BackgroundTransparency = 1
+Misc.BorderSizePixel = 0
+Misc.Position = UDim2.new(0.552863479, 0, 0.271889418, 0)
+Misc.Size = UDim2.new(0, 183, 0, 15)
+Misc.Font = Enum.Font.GothamBold
+Misc.Text = "misc"
+Misc.TextColor3 = Color3.new(1, 1, 1)
+Misc.TextSize = 30
+
+CCds.Name = "CCds"
+CCds.Parent = Main
+CCds.BackgroundTransparency = 1
+CCds.Position = UDim2.new(0.925110102, 0, 0.852534533, 0)
+CCds.Size = UDim2.new(0, 25, 0, 25)
+CCds.ZIndex = 2
+CCds.Image = "rbxassetid://3926307971"
+CCds.ImageRectOffset = Vector2.new(604, 204)
+CCds.ImageRectSize = Vector2.new(36, 36)
+CCds.MouseButton1Click:Connect(function()
+CS.Visible = true	
+end)
+
+Apotion.Name = "Apotion"
+Apotion.Parent = Main
+Apotion.BackgroundColor3 = Color3.new(1, 1, 1)
+Apotion.BorderSizePixel = 0
+Apotion.Position = UDim2.new(0.552863419, 0, 0.529953897, 0)
+Apotion.Size = UDim2.new(0, 74, 0, 20)
+Apotion.Font = Enum.Font.Fantasy
+Apotion.Text = "Potion"
+Apotion.TextColor3 = Color3.new(0, 0, 0)
+Apotion.TextSize = 18
+Apotion.MouseButton1Click:Connect(function()
+fireclickdetector(game:GetService("Workspace")["berezaa's Tycoon Kit"]["Pastel Blue"].GreenSecond.PurchasedObjects.PotionGen.Model.Button.ClickDetector)
+fireclickdetector(game:GetService("Workspace")["berezaa's Tycoon Kit"]["Medium red"].RedSecond.PurchasedObjects.PotionGen.Model.Button.ClickDetector)
+fireclickdetector(game:GetService("Workspace")["berezaa's Tycoon Kit"]["Medium green"].BlueSecond.PurchasedObjects.PotionGen.Model.Button.ClickDetector)
+fireclickdetector(game:GetService("Workspace")["berezaa's Tycoon Kit"]["Cool yellow"].YellowSecond.PurchasedObjects.PotionGen.Model.Button.ClickDetector)
+end)
+
+ADropper.Name = "ADropper"
+ADropper.Parent = Main
+ADropper.BackgroundColor3 = Color3.new(1, 1, 1)
+ADropper.BorderSizePixel = 0
+ADropper.Position = UDim2.new(0.552863419, 0, 0.410138249, 0)
+ADropper.Size = UDim2.new(0, 180, 0, 20)
+ADropper.Font = Enum.Font.Fantasy
+ADropper.Text = "AutoClick Dropper"
+ADropper.TextColor3 = Color3.new(0, 0, 0)
+ADropper.TextSize = 18
+ADropper.MouseButton1Click:Connect(function()
+FlopFrame.Visible = true
+end)
+
+title.Name = "title"
+title.Parent = Main
+title.BackgroundColor3 = Color3.new(1, 1, 1)
+title.BackgroundTransparency = 1
+title.BorderSizePixel = 0
+title.Position = UDim2.new(0.311258674, 0, 0.0199504197, 0)
+title.Size = UDim2.new(0, 183, 0, 15)
+title.Font = Enum.Font.GothamBold
+title.Text = "Wizard Tycoon GUI | V1.0.0"
+title.TextColor3 = Color3.new(1, 1, 1)
+title.TextSize = 23
+
+CS.Name = "CS"
+CS.Parent = TopFrame
+CS.Active = true
+CS.BackgroundColor3 = Color3.new(1, 1, 1)
+CS.BackgroundTransparency = 1
+CS.BorderSizePixel = 0
+CS.Position = UDim2.new(1.1318171, 0, 1.49107289, 0)
+CS.Selectable = true
+CS.Size = UDim2.new(0, 231, 0, 115)
+CS.Visible = false
+CS.Image = "http://www.roblox.com/asset/?id=4504926086"
+CS.ImageColor3 = Color3.new(0.568627, 0.054902, 0.603922)
+
+beauty_2.Name = "beauty"
+beauty_2.Parent = CS
+beauty_2.BackgroundColor3 = Color3.new(1, 1, 1)
+beauty_2.BorderSizePixel = 0
+beauty_2.Position = UDim2.new(0, 0, 0.234046191, 0)
+beauty_2.Size = UDim2.new(0, 231, 0, 2)
+
+Credits.Name = "Credits"
+Credits.Parent = CS
+Credits.BackgroundColor3 = Color3.new(1, 1, 1)
+Credits.BackgroundTransparency = 1
+Credits.BorderSizePixel = 0
+Credits.Position = UDim2.new(0.179786578, 0, 0.0376624055, 0)
+Credits.Size = UDim2.new(0, 147, 0, 15)
+Credits.Font = Enum.Font.GothamBold
+Credits.Text = "Credits"
+Credits.TextColor3 = Color3.new(1, 1, 1)
+Credits.TextSize = 23
+
+close1.Name = "close1"
+close1.Parent = CS
+close1.BackgroundTransparency = 1
+close1.Position = UDim2.new(0.890850246, 0, 0, 0)
+close1.Size = UDim2.new(0, 25, 0, 25)
+close1.ZIndex = 2
+close1.Image = "rbxassetid://3926305904"
+close1.ImageRectOffset = Vector2.new(284, 4)
+close1.ImageRectSize = Vector2.new(24, 24)
+close1.MouseButton1Click:Connect(function()
+CS.Visible = false
+end)
+
+cds.Name = "cds"
+cds.Parent = CS
+cds.BackgroundColor3 = Color3.new(1, 1, 1)
+cds.BackgroundTransparency = 1
+cds.BorderSizePixel = 0
+cds.Position = UDim2.new(0.179786593, 0, 0.515923262, 0)
+cds.Size = UDim2.new(0, 147, 0, 15)
+cds.Font = Enum.Font.GothamBold
+cds.Text = "DarkolymYT#3502"
+cds.TextColor3 = Color3.new(1, 1, 1)
+cds.TextSize = 23
+
+FlopFrame.Name = "FlopFrame"
+FlopFrame.Parent = WZ2
+FlopFrame.BackgroundColor3 = Color3.new(1, 1, 1)
+FlopFrame.BorderSizePixel = 0
+FlopFrame.Position = UDim2.new(0.550227463, 0, 0.357493848, 0)
+FlopFrame.Size = UDim2.new(0, 211, 0, 8)
+FlopFrame.Visible = false
+FlopFrame.Draggable = true
+FlopFrame.Active = true
+
+TeamChanger.Name = "TeamChanger"
+TeamChanger.Parent = FlopFrame
+TeamChanger.Active = true
+TeamChanger.BackgroundColor3 = Color3.new(1, 1, 1)
+TeamChanger.BackgroundTransparency = 1
+TeamChanger.BorderSizePixel = 0
+TeamChanger.Position = UDim2.new(0.0160708427, 0, 1.36924148, 0)
+TeamChanger.Selectable = true
+TeamChanger.Size = UDim2.new(0, 203, 0, 145)
+TeamChanger.Image = "http://www.roblox.com/asset/?id=4504926086"
+TeamChanger.ImageColor3 = Color3.new(0.568627, 0.054902, 0.603922)
+
+Blue.Name = "Blue"
+Blue.Parent = TeamChanger
+Blue.BackgroundColor3 = Color3.new(0.0509804, 0.486275, 0.67451)
+Blue.BorderSizePixel = 0
+Blue.Position = UDim2.new(-2.79396772e-08, 0, 0, 0)
+Blue.Size = UDim2.new(0, 103, 0, 73)
+Blue.Font = Enum.Font.Fantasy
+Blue.Text = "Blue"
+Blue.TextColor3 = Color3.new(0, 0, 0)
+Blue.TextSize = 19
+Blue.MouseButton1Click:Connect(function()
+FlopFrame.Visible = false
+_G.Oli1 = true
+while _G.Oli1 do wait()
+fireclickdetector(game:GetService("Workspace")["berezaa's Tycoon Kit"]["Pastel Blue"].BlueSecond.PurchasedObjects.Mine.Button.ClickDetector)
+end
+end)
+
+Green.Name = "Green"
+Green.Parent = TeamChanger
+Green.BackgroundColor3 = Color3.new(0.0745098, 0.509804, 0.0666667)
+Green.BorderSizePixel = 0
+Green.Position = UDim2.new(0.507389188, 0, 0, 0)
+Green.Size = UDim2.new(0, 103, 0, 73)
+Green.Font = Enum.Font.Fantasy
+Green.Text = "Green"
+Green.TextColor3 = Color3.new(0, 0, 0)
+Green.TextSize = 19
+Green.MouseButton1Click:Connect(function()
+FlopFrame.Visible = false
+_G.Oli2 = true
+while _G.Oli2 do wait()
+fireclickdetector(game:GetService("Workspace")["berezaa's Tycoon Kit"]["Medium green"].GreenSecond.PurchasedObjects.Mine.Button.ClickDetector)
+end
+end)
+
+Red.Name = "Red"
+Red.Parent = TeamChanger
+Red.BackgroundColor3 = Color3.new(0.419608, 0, 0.00392157)
+Red.BorderSizePixel = 0
+Red.Position = UDim2.new(0, 0, 0.503448248, 0)
+Red.Size = UDim2.new(0, 103, 0, 73)
+Red.Font = Enum.Font.Fantasy
+Red.Text = "Red"
+Red.TextColor3 = Color3.new(0, 0, 0)
+Red.TextSize = 19
+Red.MouseButton1Click:Connect(function()
+FlopFrame.Visible = false
+_G.Oli4 = true
+while _G.Oli4 do wait()
+fireclickdetector(game:GetService("Workspace")["berezaa's Tycoon Kit"]["Medium red"].RedSecond.PurchasedObjects.Mine.Button.ClickDetector)
+end
+end)
+
+Yellow.Name = "Yellow"
+Yellow.Parent = TeamChanger
+Yellow.BackgroundColor3 = Color3.new(0.694118, 0.576471, 0.0980392)
+Yellow.BorderSizePixel = 0
+Yellow.Position = UDim2.new(0.507389188, 0, 0.503448248, 0)
+Yellow.Size = UDim2.new(0, 103, 0, 73)
+Yellow.Font = Enum.Font.Fantasy
+Yellow.Text = "Yellow"
+Yellow.TextColor3 = Color3.new(0, 0, 0)
+Yellow.TextSize = 19
+Yellow.MouseButton1Click:Connect(function()
+FlopFrame.Visible = false
+_G.Oli3 = true
+while _G.Oli3 do wait()
+fireclickdetector(game:GetService("Workspace")["berezaa's Tycoon Kit"]["Cool yellow"].YellowSecond.PurchasedObjects.Mine.Button.ClickDetector)
+end
+end)
